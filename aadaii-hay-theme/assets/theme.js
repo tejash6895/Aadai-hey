@@ -11,4 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     show(0);
     setInterval(()=>{ i = (i+1) % all.length; show(i); }, interval);
   });
+
+  document.querySelectorAll('.tabs-section').forEach(section => {
+    const pills = section.querySelectorAll('.pill');
+    const panels = section.querySelectorAll('.tab-content');
+    function activate(idx){
+      pills.forEach((p,i)=> p.classList.toggle('is-active', i === idx));
+      panels.forEach((p,i)=> p.hidden = i !== idx);
+    }
+    pills.forEach((p,i)=> p.addEventListener('click', () => activate(i)));
+    if (pills.length) activate(0);
+  });
 });
