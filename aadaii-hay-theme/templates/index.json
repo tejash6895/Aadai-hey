@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "hero": { "type": "hero-slideshow", "settings": {} },
+    "tiles": { "type": "collection-tiles", "settings": { "heading": "" } },
+    "tabs":  { "type": "tabbed-collections", "settings": { "heading": "New Arrivals", "limit": 12, "aspect": "square" } },
+    "feat":  { "type": "featured-collection-grid", "settings": { "heading": "Featured products" } }
+  },
+  "order": ["hero", "tiles", "tabs", "feat"]
+}

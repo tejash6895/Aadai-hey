@@ -1,0 +1,8 @@
+{%- assign p = product.price -%}
+{%- assign c = product.compare_at_price -%}
+<p class="price">
+  {% if c > p %}
+    <span class="compare">{{ c | money }}</span>
+  {% endif %}
+  <span class="current">{{ p | money }}</span>
+</p>

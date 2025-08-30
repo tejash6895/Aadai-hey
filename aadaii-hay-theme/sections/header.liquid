@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="page-width header-inner">
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <a class="logo" href="/">
+      {% if settings.logo %}
+        <img src="{{ settings.logo | image_url: width: 220 }}" alt="{{ shop.name }}">
+      {% else %}
+        <span class="logo-text">{{ shop.name }}</span>
+      {% endif %}
+    </a>
+    <nav class="main-nav" role="navigation">
+      <ul>
+        {% assign links = settings.nav_links | split: ',' %}
+        {% for item in links %}
+          {% assign pair = item | strip | split: ':' %}
+          <li><a href="{{ pair[1] | strip }}">{{ pair[0] | strip }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <a href="/search" aria-label="Search">🔍</a>
+      <a href="/account" aria-label="Account">👤</a>
+      <a href="/cart" aria-label="Cart">🛒</a>
+    </div>
+  </div>
+</header>

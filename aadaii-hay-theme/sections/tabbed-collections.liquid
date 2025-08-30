@@ -1,0 +1,46 @@
+{% comment %} Tabbed Collections Section {% endcomment %}
+<section id="tabbed-collections-{{ section.id }}">
+  <div class="tabs">
+    {% for i in (1..4) %}
+      {% assign key = 'collection_' | append: i %}
+      {% assign coll = section.settings[key] %}
+      {% if coll %}
+        <button class="tab" data-target="tab-{{ i }}">{{ coll.title }}</button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="panels">
+    {% for i in (1..4) %}
+      {% assign key = 'collection_' | append: i %}
+      {% assign coll = section.settings[key] %}
+      {% if coll %}
+        <div id="tab-{{ i }}" class="panel">
+          <h3>{{ coll.title }}</h3>
+          <ul class="grid">
+            {% for product in coll.products limit: 4 %}
+              <li>
+                <a href="{{ product.url }}">{{ product.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Tabbed collections",
+  "settings": [
+    { "type": "collection", "id": "collection_1", "label": "Collection 1" },
+    { "type": "collection", "id": "collection_2", "label": "Collection 2" },
+    { "type": "collection", "id": "collection_3", "label": "Collection 3" },
+    { "type": "collection", "id": "collection_4", "label": "Collection 4" }
+  ],
+  "presets": [
+    { "name": "Tabbed collections" }
+  ]
+}
+{% endschema %}

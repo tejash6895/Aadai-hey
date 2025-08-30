@@ -1,0 +1,26 @@
+<footer class="site-footer">
+  <div class="page-width footer-grid">
+    <div>
+      <h4>About</h4>
+      <p>{{ shop.name }} — crafted fashion, delivered with care.</p>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="/pages/contact">Contact</a></li>
+        <li><a href="/policies/shipping-policy">Shipping</a></li>
+        <li><a href="/policies/refund-policy">Returns</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Newsletter</h4>
+      {% form 'customer' %}
+        <input type="email" name="contact[email]" placeholder="Enter your email" required>
+        <button type="submit" class="button">Subscribe</button>
+      {% endform %}
+    </div>
+  </div>
+  <div class="page-width footer-bottom">
+    <small>© {{ 'now' | date: "%Y" }} {{ shop.name }}. All rights reserved.</small>
+  </div>
+</footer>

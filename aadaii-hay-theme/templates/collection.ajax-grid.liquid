@@ -1,0 +1,8 @@
+{% assign per_page = 12 %}
+{% paginate collection.products by per_page %}
+  <div class="grid grid--2 grid--3-md grid--4-lg">
+    {% for product in collection.products %}
+      {% render 'card-product', product: product, aspect: 'square' %}
+    {% endfor %}
+  </div>
+{% endpaginate %}

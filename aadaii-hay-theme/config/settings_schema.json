@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      { "type": "image_picker", "id": "logo", "label": "Header logo" },
+      { "type": "text", "id": "nav_links", "label": "Header nav (comma-separated)", "default": "Home:/,New:/collections/new-arrivals,Shop:/collections/all,Track Order:/pages/track-order,Store Locator:/pages/store-locator,Franchise Enquiry:/pages/franchise" },
+      { "type": "color", "id": "accent", "label": "Accent color", "default": "#111111" },
+      { "type": "color", "id": "pill_border", "label": "Pill border color", "default": "#111111" }
+    ]
+  }
+]
